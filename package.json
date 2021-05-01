@@ -1,0 +1,23 @@
+{
+  "name": "moloveien",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "zoomwall.js": "^2.0.2"
+  },
+  "dependencies": {
+    "highlight.js": "^10.7.2",
+    "lightgallery.js": "^1.4.0"
+  }
+}
