@@ -12,11 +12,7 @@
     <!--    <meta property="fb:app_id" content="2179129595466192" />-->
 
     <title>Moloveien 7 - Filtvet</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.1/css/all.css"
-          integrity="sha384-sr3GDThhNP8BxHFoTK4zKFgOjcrT8vzaiLwnwU+yB31BCaNj3QMX6YVXcv8AeBAy" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    {{ css('main') }}
 </head>
 <body>
 
@@ -26,40 +22,23 @@
 </script>
 <![endif]-->
 
+<div id="header_menu">
+    <nav>
+        <ul class="left">
+            <li>Bilder</li>
+            <li>Selg med oss</li>
+        </ul>
+        <h1>Strandhus til salgs</h1>
+        <ul class="left">
+            <li>Finn annonse</li>
+            <li>Kart</li>
+        </ul>
+    </nav>
+</div>
+
 <header class="flex-c">
-    <div class="card">
-        <h1>Moloveien 7</h1>
-        <p>Bolig til salgs med unik beliggenhet. Ved strandgrensen.</p>
-        <p>Lekker 2-roms leilighet i 3.etasje - flott utsikt fra sydvestvendt veranda - stilig og smakfullt kjøkken</p>
-        <div>
-            19 500 000,-
-            187 m²
-            4 soverom
-            2 290 000
-            PRISANTYDNING
-
-            Prisantydning
-            kr 1 800 000
-            BRA / P-rom
-            70 m² / 58 m²
-            Boligtype
-            Andelsleilighet
-
-            Ingen boplikt
-
-
-            Prisantydning
-            kr 3 300 000
-
-            Omkostninger: kr 91 520
-            Totalpris: kr 3 391 520
-
-            Lekker 3R toppleilighet fra 2018 - Garanti til 2023 - Vestvendt balkong med utsikt - Heis -Mulighet for kjøp
-            av garasje*
-        </div>
-    </div>
-    <video playsinline autoplay muted loop poster="img/header.webp" id="bgvid">
-        <source src="img/video.mp4" type="video/mp4">
+    <video playsinline autoplay muted loop poster="{{ image('table.jpeg', 1200) }}" id="bgvid">
+        <source src="{{ image('video.mp4') }}" type="video/mp4">
     </video>
     <div class="waveDivider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
@@ -89,90 +68,45 @@
 
 </figure-->
 
-
 <section class="text about bg-light1" id="about">
     <div class="wrap">
-        <h2>Kultivar</h2>
-        <h4>~ Delikatesse & Kolonial ~</h4>
+        <h2>Filtvet, Asker</h2>
+        <h4>~ Flott beliggende eiendom som grenser mot stranden ~</h4>
         <p>
-            På sydspissen av Hurumhalvøya finner du Kultivar, en liten delikatesse &
-            kolonial. Hos oss finner du smaksrike matvarer, laget med omtanke, fra småskalaprodusenter
-            fra nord i landet til syd ved middelhavet. Blant annet finner du mange lokale produkter fra
-            gårder og produsenter i vårt nærområde.
+            Særegen og meget flott beliggende eiendom med kort gåavstand fra Filtvet Fyr og Villa Malla. Ca. 50 minutter fra Oslo sentrum. Moloveien er en liten blindvei, hovedsakelig bestående av hvite hus i sørlandsstil.
+        </p>
+        <p>
+            Boligen ligger idyllisk til i Ekrabukta, helt inntil stranda, og har en fantastisk sjøutsikt og gode solforhold.
+        </p>
+        <p>
+            Boligen inneholder: 1. etg: Gang, stue med utgang til terrassen, bad, 3 soverom, kjøkken og bod. Kjeller: Boder og lagerplass. Garasje.
+        </p>
+        <p>
+            Boligen med normal standard. Flere av boligens rom er overflatebehandlet i senere tid og fremstår som lyse og tiltalende.
+        </p>
+        <p>
+            Det er ikke boplikt i Asker kommune.
+        </p>
+        <p>
+            Velkommen på visning !
         <p>
     </div>
 </section>
 
-
-<section style=" ">
-    <div class="wrap" style="background-color:#292C33;color:#fff;">
-        <dl class="flex-c">
-            <div class="list__item">
-                <dt class="list__key">Boligtype</dt>
-                <dd class="list__value">Leilighet</dd>
+<section id="details" class="bg-light1">
+    <div class="wrap">
+        {% for detail in details  %}
+            <div>
+                <h4>{{ detail.title }}</h4>
+                <span>{{ detail.text }}</span>
             </div>
-            <div class="list__item">
-                <dt class="list__key">Eierform</dt>
-                <dd class="list__value">Eierseksjon</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Eierseksjon</dt>
-                <dd class="list__value">109</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Antall soverom</dt>
-                <dd class="list__value">2 soverom</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Etasje</dt>
-                <dd class="list__value">5</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Primærrom (P-ROM)</dt>
-                <dd class="list__value">48 m²</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Bruksareal (BRA)</dt>
-                <dd class="list__value">50 m²</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Fellesutgifter</dt>
-                <dd class="list__value">kr&nbsp;2&nbsp;506 / Mnd</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Kommunale avgifter</dt>
-                <dd class="list__value">kr&nbsp;3&nbsp;572 / Mnd</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Prisantydning</dt>
-                <dd class="list__value">kr&nbsp;3&nbsp;300&nbsp;000</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Omkostninger</dt>
-                <dd class="list__value">kr&nbsp;91&nbsp;520</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Totalpris</dt>
-                <dd class="list__value">kr&nbsp;3&nbsp;391&nbsp;520</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Fellesformue</dt>
-                <dd class="list__value">kr&nbsp;21&nbsp;300</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Byggeår</dt>
-                <dd class="list__value">2018</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Tomt</dt>
-                <dd class="list__value">Eiet tomt 3506 m²</dd>
-            </div>
-            <div class="list__item">
-                <dt class="list__key">Oppdragsnummer</dt>
-                <dd class="list__value">74210052</dd>
-            </div>
-        </dl>
+        {% endfor %}
     </div>
+    <div class="bottom bg-dark2"></div>
+</section>
+
+<section class="gallery">
+    <div class="container">{{ gallery('gallery') }}</div>
 </section>
 
 <section class="bakery sideImage" id="bakery">
@@ -276,7 +210,6 @@
     </div>
     <div class="bottom bg-dark1"></div>
 </section-->
-
 
 
 <!--section class="sideImage" id="vegetables">
@@ -431,7 +364,7 @@
     </div>
 </footer>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122769345-1"></script>
+<!--script async src="https://www.googletagmanager.com/gtag/js?id=UA-122769345-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -441,7 +374,7 @@
 
     gtag('js', new Date());
     gtag('config', 'UA-122769345-1');
-</script>
+</script-->
 
 <!--script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -475,6 +408,11 @@
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();
 </script-->
+
+<script>
+    {# {{ js('https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js') }} #}
+    {{ js('main') }}
+</script>
 
 </body>
 </html>

@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "highlight.js": "^10.7.2",
-    "lightgallery.js": "^1.4.0"
+    "lightgallery.js": "^1.4.0",
+    "vanilla-lazyload": "^17.3.1"
   }
 }
