@@ -82,13 +82,12 @@ class TwigExtension extends AbstractExtension {
         foreach( $images as $image ) {
             foreach( [ 'jpg', 'jpeg', 'gif', 'webp', 'png' ] as $type ) {
                 if( str_ends_with( strtolower( $image ), $type ) ) {
-                    $image_url = $this->image( "$folder/$image", 500 );
-                    echo "<figure><img src='$image_url' alt='gallery-$image' /></figure>";
+                    $image_url = $this->image( "$folder/$image", 650 );
+                    echo "<figure><img src='$image_url' alt='gallery-$image' class='lazy' /></figure>";
                 }
             }
         }
     }
-
 
 
 

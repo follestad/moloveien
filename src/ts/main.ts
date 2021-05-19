@@ -1,3 +1,3 @@
-document.addEventListener('click', () => {
-    alert('hello');
-})
+import LazyLoad from 'vanilla-lazyload';
+
+new LazyLoad();

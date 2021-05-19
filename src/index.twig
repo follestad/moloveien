@@ -36,10 +36,16 @@
     </nav>
 </div>
 
-<header class="flex-c">
-    <video playsinline autoplay muted loop poster="{{ image('table.jpeg', 1200) }}" id="bgvid">
-        <source src="{{ image('video.mp4') }}" type="video/mp4">
-    </video>
+<header id="hero" class="flex-c">
+    <figure>
+        <img alt="A baby smiling with a yellow headband." src="{{ image('gallery/beskrivelse2.jpg', 1200) }}"
+             srcset="{{ image('gallery/beskrivelse2.jpg', 2400) }} 2x">
+    </figure>
+
+    {# <video playsinline autoplay muted loop poster="{{ image('gallery/beskrivelse2.jpg', 1200) }}" id="bgvid"> #}
+    {# <!--source src="{{ image('video.mp4') }}" type="video/mp4"--> #}
+    {# <img alt="A baby smiling with a yellow headband."  src="{{ image('gallery/beskrivelse2.jpg', 1200) }}"  srcset="{{ image('gallery/beskrivelse2.jpg', 2400) }} 2x"> #}
+    {# </video> #}
     <div class="waveDivider">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
             <path class="shape-fill"
@@ -68,41 +74,94 @@
 
 </figure-->
 
-<section class="text about bg-light1" id="about">
-    <div class="wrap">
-        <h2>Filtvet, Asker</h2>
-        <h4>~ Flott beliggende eiendom som grenser mot stranden ~</h4>
-        <p>
-            Særegen og meget flott beliggende eiendom med kort gåavstand fra Filtvet Fyr og Villa Malla. Ca. 50 minutter fra Oslo sentrum. Moloveien er en liten blindvei, hovedsakelig bestående av hvite hus i sørlandsstil.
-        </p>
-        <p>
-            Boligen ligger idyllisk til i Ekrabukta, helt inntil stranda, og har en fantastisk sjøutsikt og gode solforhold.
-        </p>
-        <p>
-            Boligen inneholder: 1. etg: Gang, stue med utgang til terrassen, bad, 3 soverom, kjøkken og bod. Kjeller: Boder og lagerplass. Garasje.
-        </p>
-        <p>
-            Boligen med normal standard. Flere av boligens rom er overflatebehandlet i senere tid og fremstår som lyse og tiltalende.
-        </p>
-        <p>
-            Det er ikke boplikt i Asker kommune.
-        </p>
-        <p>
-            Velkommen på visning !
-        <p>
+<section class="bg-light1" id="about">
+    <div class="wrapper">
+        <div class="text">
+            <h2>Filtvet, Asker</h2>
+            <h4>~ Flott beliggende eiendom som grenser mot stranden ~</h4>
+            <p>
+                Særegen og meget flott beliggende eiendom med kort gåavstand fra Filtvet Fyr og Villa Malla. Ca. 50
+                minutter
+                fra Oslo sentrum. Moloveien er en liten blindvei, hovedsakelig bestående av hvite hus i sørlandsstil.
+            </p>
+            <p>
+                Boligen ligger idyllisk til i Ekrabukta, helt inntil stranda, og har en fantastisk sjøutsikt og gode
+                solforhold.
+            </p>
+            <p>
+                Boligen inneholder: 1. etg: Gang, stue med utgang til terrassen, bad, 3 soverom, kjøkken og bod.
+                Kjeller:
+                Boder og lagerplass. Garasje.
+            </p>
+            <p>
+                Boligen med normal standard. Flere av boligens rom er overflatebehandlet i senere tid og fremstår som
+                lyse
+                og tiltalende.
+            </p>
+            <p>
+                Det er ikke boplikt i Asker kommune.
+            </p>
+            <p>
+                Velkommen på visning !
+            <p>
+        </div>
+
+        <article id="details" class="bg-light1">
+            <figure>
+                <img alt="Ekrabukta" src="{{ image('gallery/110uteomrade.jpg', 550) }}"
+                     srcset="{{ image('gallery/110uteomrade.jpg', 1100) }} 2x">
+            </figure>
+            <h2>Moloveien 7, Filtvet</h2>
+            <div class="wrap">
+                {% for detail in details %}
+                    <div>
+                        <h4>{{ detail.title }}</h4>
+                        <span>{{ detail.text }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="bottom bg-dark2"></div>
+        </article>
     </div>
+
 </section>
 
-<section id="details" class="bg-light1">
+
+<section id="welcome">
     <div class="wrap">
-        {% for detail in details  %}
+        <div class="text">
+            <h1>Velkommen til Moloveien 7 - <span>Et sted du ikke kan glemme</span></h1>
+            <p>
+                Særegen og meget flott beliggende eiendom med kort gåavstand fra Filtvet Fyr og Villa Malla. Ca. 50
+                minutter
+                fra Oslo sentrum. Moloveien er en liten blindvei, hovedsakelig bestående av hvite hus i sørlandsstil.
+            </p>
+            <p>
+                Boligen ligger idyllisk til i Ekrabukta, helt inntil stranda, og har en fantastisk sjøutsikt og gode
+                solforhold.
+            </p>
+        </div>
+        <figure><img alt="Ekrabukta" src="{{ image('gallery/110uteomrade.jpg', 550) }}"
+                     srcset="{{ image('gallery/110uteomrade.jpg', 1100) }} 2x"></figure>
+        <div id="bullets">
             <div>
-                <h4>{{ detail.title }}</h4>
-                <span>{{ detail.text }}</span>
+                <h5>118 m²</h5>
+                <span>Primærrom</span>
             </div>
-        {% endfor %}
+            <div>
+                <h5>240 m²</h5>
+                <span>Bruksareal</span>
+            </div>
+            <div>
+                <h5>3</h5>
+                <span>Soverom</span>
+            </div>
+            <div>
+                <h5>50 m</h5>
+                <span>Fra stranda</span>
+            </div>
+        </div>
     </div>
-    <div class="bottom bg-dark2"></div>
 </section>
 
 <section class="gallery">
@@ -304,7 +363,7 @@
         <figure class="map">
             <div class="overlay" onClick="style.pointerEvents='none'"></div>
             <div id='google-map'></div>
-            <!--script>
+            <script>
                 function initMap() {
                     // The location of Uluru
                     var uluru = {lat: 59.541232, lng: 10.556583};
@@ -314,9 +373,9 @@
                     // The marker, positioned at Uluru
                     var marker = new google.maps.Marker({position: uluru, map: map});
                 }
-            </script-->
-            <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoOh5JE-A5niZNDbM9RSBSQ4CvpR_osSw&callback=initMap"
-                    async defer></script-->
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoOh5JE-A5niZNDbM9RSBSQ4CvpR_osSw&callback=initMap"
+                    async defer></script>
         </figure>
     </div>
 </section>

@@ -7,6 +7,8 @@ use Core\TwigExtension;
 use Twig\Loader\FilesystemLoader;
 use Whoops\Handler\PrettyPageHandler;
 
+set_time_limit ( 300 );
+
 /** Define root directory */
 define( 'ROOT_DIR', realpath( __DIR__ . '/../' ) . '/' );
 

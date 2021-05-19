@@ -188,17 +188,36 @@ video#bgvid {
 }
 
 #details {
+    width: 100%;
+    max-width: 500px;
+    background-color: #292c33;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: .5em;
+    box-shadow: 0 0 10px 0 rgba(#000,0.6);
+
+    figure {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        overflow: hidden;
+    }
+
+    h2 {
+        padding: 1rem 1rem 0 1rem;
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 0 !important;
+    }
 
     .wrap {
-        background-color: #292c33;
         display: grid;
-        grid-gap: .5em;
+        grid-gap: 2em;
         grid-row-gap: 1.4rem;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         color: #fafafa;
         text-align: left;
-        padding: 2em 4em;
-        max-width: 1200px;
+        padding: 1em 1rem;
+        width: 100%;
     }
 
     h4 {
@@ -294,26 +313,15 @@ p {
 |-------------------------------------------------------------------------------
 */
 
-body > header {
+body > header#hero {
     position: relative;
     display: block;
     height: 80vh;
     overflow: hidden;
-    //background-image: url('img/header.webp');
-    //background-position: center center;
-    //background-repeat: no-repeat;
-    //background-size: cover;
 
-    $logoSize: 30vh;
-
-    .card {
-        position: absolute;
-        right: 10vw;
-        bottom: 3em;
-        background-color: #FFF;
-        padding: 1em;
-        border-radius: 10px;
-        width: 450px;
+    figure {
+        max-width: 100%;
+        height: auto;
     }
 
     .waveDivider {
@@ -344,6 +352,79 @@ body > header {
 
 }
 
+
+#welcome {
+    margin: 0 auto;
+    padding: 3em;
+
+    & > div {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        max-width: 1200px;
+        width: 100%;
+        height: 650px;
+    }
+
+    .text {
+        padding: 1em 0;
+        max-width: 650px;
+        margin-right: 2em;
+        text-align: left !important
+    }
+
+    figure {
+        flex: 1 1 500px;
+        max-width: 500px;
+        height: 100%;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+
+    #bullets {
+        position: absolute;
+        background-color: #fff;
+        padding: 2rem 4em;
+        bottom: 4em;
+        left: 0 !important;
+        right: 0 !important;
+        width: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px 2px rgba(#000,0.2);
+        border-radius: 6px;
+
+        & > div {
+            flex: 1;
+            text-align: center !important;
+        }
+
+        h5 {
+            text-align: center;
+            font-size: 1.7em;
+            margin: 0 0 .5rem 0;
+            color: #7769DB;
+        }
+
+        span {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.6em;
+            letter-spacing: 0.05em;
+        }
+
+    }
+
+}
+
+
+
 /*
 |-------------------------------------------------------------------------------
 | Default Wrap
@@ -358,6 +439,30 @@ body > header {
     @media ($mobileOnly) {
         padding: 30px 1em;
     }
+}
+
+
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    text-align: left;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        max-width: 1290px;
+    }
+
+    .text {
+        flex: 1;
+        margin-right: 2em;
+
+    }
+
 }
 
 

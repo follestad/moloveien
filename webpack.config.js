@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './code/ts/main.ts',
+    entry: './src/ts/main.ts',
     mode: 'production',
     devtool: 'inline-source-map',
     module: {
@@ -19,6 +19,6 @@ module.exports = {
     },
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'code/js'),
+        path: path.resolve(__dirname, 'src/js'),
     },
 };
