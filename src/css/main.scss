@@ -77,6 +77,14 @@ body {
     @extend %reset;
 }
 
+h1 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 0;
+    text-indent: -99999px;
+}
 
 header {
     position: relative;
@@ -142,9 +150,11 @@ header {
         font-weight: 900;
     }
 
+
+
     #actions {
         position: absolute;
-        bottom: 2em;
+        bottom: calc(2em + env(safe-area-inset-bottom));
         width: 100%;
         text-align: center;
     }

@@ -91,7 +91,8 @@ class TwigExtension extends AbstractExtension {
 
 
 
-    public function image(string $file, int $width = null): string {
+
+    public function image(string $file, int $width = null, bool $resize = true): string {
 
         # Get path info
         $image = (object)pathinfo( $file );
@@ -131,7 +132,7 @@ class TwigExtension extends AbstractExtension {
         }
 
         # Let us convert image
-        if( in_array( $image->extension_original, [ 'jpg', 'jpeg', 'png' ] ) ) {
+        if( in_array( $image->extension_original, [ 'jpg', 'jpeg', 'png' ] ) && $resize ) {
             $image_resize = new ImageResize( $source_file );
             if( $width ) {
                 $image_resize = $image_resize->resizeToWidth( $width );

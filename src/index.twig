@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:url" content="https://moloveien7.no"/>
-    <meta property="og:title" content="Moloveien 7"/>
-    <!--meta property="og:image" content="https://kultivar.no/img/shop.jpg"/-->
-    <meta property="og:description" content="Til salgs!"/>
+    <meta property="og:url" content="https://ekrabukta.no"/>
     <meta property="og:type" content="website"/>
-    <!--    <meta property="fb:app_id" content="2179129595466192" />-->
+    <meta property="og:title"
+          content="Fritidseiendom til salgs. Fantastisk beliggenhet som grenser mot stranden. Filtvet i Asker."/>
+    <meta property="og:description"
+          content="Eiendom som ligger idyllisk til i Ekrabukta (Filtvet), helt inntil stranda. Kun 50 min fra Oslo"/>
+    <meta property="og:image" content="{{ image('gallery/beskrivelse2.jpeg', 1200) }}"/>
 
-    <title>Moloveien 7 - Filtvet</title>
+    <link rel="icon" href="{{ image('favicons/favicon.svg') }}">
+    <link rel='mask-icon' href='{{ image('favicons/favicon.svg') }}' color='#000000'>
+    <link rel="apple-touch-icon" href="{{ image('favicons/apple-touch-icon.png', null, false) }}">
+    <link rel="manifest" href="{{ image('favicons/manifest.json') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Til salgs: Flott beliggende eiendom/fritidseiendom som grenser mot stranden</title>
     {{ css('main') }}
 </head>
 <body>
@@ -23,9 +30,14 @@
 <![endif]-->
 
 <header>
+    <h1 style="opacity: 0">Lyst på fritidseiendom som grenser mot stranden? Kun 50 min fra Oslo.</h1>
     <figure id="hero">
-        <img alt="Ekrabukta Filtvet Fritidseiendom" src="{{ image('gallery/114hoydefoto.jpg', 1200) }}"
-             srcset="{{ image('gallery/114hoydefoto.jpg', 2400) }} 2x">
+        <img
+                alt="Ekrabukta Filtvet Fritidseiendom" class="bgImage"
+                src="{{ image('gallery/114hoydefoto.jpg', 1200) }}"
+                srcset="{{ image('gallery/114hoydefoto.jpg', 350) }} 350w, {{ image('gallery/114hoydefoto.jpg', 600) }} 600w, {{ image('gallery/114hoydefoto.jpg', 900) }} 900w, {{ image('gallery/114hoydefoto.jpg', 1200) }} 1200w, {{ image('gallery/114hoydefoto.jpg', 2000) }} 2000w, {{ image('gallery/114hoydefoto.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
     </figure>
     <div class="overlay"></div>
     <article class="content">
@@ -78,8 +90,8 @@
                     <span>Bruksareal</span>
                 </div>
                 <div>
-                    <h5>3</h5>
-                    <span>Soverom</span>
+                    <h5>968 m²</h5>
+                    <span>Tomt</span>
                 </div>
             </div>
         </data>
