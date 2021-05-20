@@ -87,7 +87,7 @@ header {
         img {
             object-position: center center;
             object-fit: cover;
-            animation: background-scale 10s linear;
+            animation: background-scale 10s linear forwards;
         }
 
     }
@@ -127,7 +127,7 @@ header {
 
     #actions {
         position: absolute;
-        bottom: calc(2em + env(safe-area-inset-bottom));
+        bottom: calc(2em - env(safe-area-inset-bottom));
         width: 100%;
         text-align: center;
     }
