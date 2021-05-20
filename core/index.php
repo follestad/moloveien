@@ -73,7 +73,7 @@ $template_path = $config->resolveTemplatePath( $path );
  */
 $twigLoader = new FilesystemLoader( SOURCE_DIR );
 $twig = new Environment( $twigLoader, [ 'debug' => true ] );
-$twig->addExtension( new TwigExtension( $config ) );
+$twig->addExtension( new TwigExtension() );
 
 /** Load all json files as data */
 $data = [];

@@ -2,14 +2,13 @@
 
 namespace Core;
 
+use Exception;
 use Twig\TwigFunction;
 use Gumlet\ImageResize;
 use Twig\Extension\AbstractExtension;
 
 class TwigExtension extends AbstractExtension {
 
-    public function __construct(private Config $config) {
-    }
 
     /*
     |---------------------------------------------------------------------------
@@ -76,6 +75,11 @@ class TwigExtension extends AbstractExtension {
 
 
 
+    /**
+     * @param string $folder
+     *
+     * @throws \Exception
+     */
     public function gallery(string $folder) {
         $directory = SOURCE_DIR . "image/$folder";
         $images = scandir( $directory );
@@ -92,6 +96,14 @@ class TwigExtension extends AbstractExtension {
 
 
 
+    /**
+     * @param string $file
+     * @param int|null $width
+     * @param bool $resize
+     *
+     * @return string
+     * @throws \Gumlet\ImageResizeException
+     */
     public function image(string $file, int $width = null, bool $resize = true): string {
 
         # Get path info
@@ -128,7 +140,7 @@ class TwigExtension extends AbstractExtension {
         $source_file = SOURCE_DIR . "image/$file";
 
         if( ! is_file( $source_file ) ) {
-            throw new \Exception( "Unable to find file: $source_file" );
+            throw new Exception( "Unable to find file: $source_file" );
         }
 
         # Let us convert image
@@ -145,7 +157,7 @@ class TwigExtension extends AbstractExtension {
         if( is_file( PUBLIC_DIR . $image->path ) ) {
             return '/' . ltrim( $image->path, '/' );
         } else {
-            throw new \Exception( 'Unable to resolve image' );
+            throw new Exception( 'Unable to resolve image' );
         }
 
     }

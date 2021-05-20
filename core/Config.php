@@ -3,6 +3,7 @@
 namespace Core;
 
 use Dotenv\Dotenv;
+use JetBrains\PhpStorm\Pure;
 
 class Config {
 
@@ -69,7 +70,7 @@ class Config {
      * Source folder is not something we deploy for web, but
      * rather use as a builder for our websites.
      */
-    public function source_folder(): string {
+    #[Pure] public function source_folder(): string {
         return trim( $this->env( 'SOURCE_FOLDER' ), '/' ) . "/";
     }
 
@@ -84,7 +85,7 @@ class Config {
      * Because it is static we can use CDN networks like
      * Netlify and other similar services.
      */
-    public function public_folder(): string {
+    #[Pure] public function public_folder(): string {
         return trim( $this->env( 'PUBLIC_FOLDER' ), '/' ) . "/";
     }
 
