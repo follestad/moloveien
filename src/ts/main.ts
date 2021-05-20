@@ -1,7 +1,4 @@
-import LazyLoad from 'vanilla-lazyload';
 import Typed from 'typed.js';
-
-new LazyLoad();
 
 let typed_options = {
     strings: [
