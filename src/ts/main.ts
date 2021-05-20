@@ -5,7 +5,7 @@ new LazyLoad();
 
 
 let typed_options = {
-    strings: ['Enebolig', 'eller','Fritidsbolig', 'Særegen beliggenhet', 'Rett ved stranda', 'Rett ved Ekrabukta','350m til Villa Malla', 'Ta fergen fra Oslo til Filtvet Brygge'],
+    strings: ['Ny enebolig eller fritidsbolig?', 'Særegen og meget flott beliggenhet','Ingen boplikt!', 'Ligger idyllisk til ved Ekrabukta, helt inntil stranda', 'Ta et morgenbad på en Askers fineste strand','Kun 50 min fra Oslo','Kun 350 meter å gå til Villa Malla','Velkommen til visning ^1000 <br> søndag 21. mai 2021 kl 12-14.'],
     typeSpeed: 50,
     startDelay: 100,
     backDelay: 1600,
