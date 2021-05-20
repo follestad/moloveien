@@ -20,6 +20,7 @@
     "highlight.js": "^10.7.2",
     "lazyload": "*",
     "lightgallery.js": "^1.4.0",
+    "typed.js": "^2.0.12",
     "vanilla-lazyload": "^17.3.1"
   }
 }
