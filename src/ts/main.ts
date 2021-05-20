@@ -8,7 +8,7 @@ let typed_options = {
         'Kun 50 meter fra huset til strandkanten',
         'Kun 50 minutter fra Oslo!^1000 <br> Ligger på sydspissen i Asker',
         'Kun 350 meter å gå til Villa Malla',
-        'Velkommen til visning ^1000 <br> søndag 21. mai 2021 ^800 <br> kl 12-14. ^500 <br><small style="font-size: 1rem;font-weight: 400">Moloveien 7 - Filtvet i Asker</small>'
+        'Velkommen til visning ^1000 <br> søndag 23. mai 2021 ^800 <br> kl 12-14. ^500 <br><small style="font-size: 1rem;font-weight: 400">Moloveien 7 - Filtvet i Asker</small>'
     ],
     typeSpeed: 40,
     startDelay: 100,
