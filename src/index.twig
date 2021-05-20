@@ -23,22 +23,69 @@
 </head>
 <body>
 
-<!--[if lt IE 9]>
-<script>
-    document.createElement('video');
-</script>
-<![endif]-->
-
 <header>
     <h1 style="opacity: 0">Lyst på fritidseiendom som grenser mot stranden? Kun 50 min fra Oslo.</h1>
     <figure id="hero">
+
         <img
-                alt="Ekrabukta Filtvet Fritidseiendom" class="bgImage"
+                alt="Ekrabukta Filtvet Fritidseiendom" class="bgImage first"
                 src="{{ image('gallery/114hoydefoto.jpg', 1200) }}"
                 srcset="{{ image('gallery/114hoydefoto.jpg', 350) }} 350w, {{ image('gallery/114hoydefoto.jpg', 600) }} 600w, {{ image('gallery/114hoydefoto.jpg', 900) }} 900w, {{ image('gallery/114hoydefoto.jpg', 1200) }} 1200w, {{ image('gallery/114hoydefoto.jpg', 2000) }} 2000w, {{ image('gallery/114hoydefoto.jpg', 2500) }} 2500w"
                 sizes="100vw"
         >
+
+        <img
+                alt="Strand og kost på Filtvet" class="bgImage hidden"
+                src=""
+                srcset=""
+                data-src="{{ image('gallery/110uteomrade.jpg', 1200) }}"
+                data-srcset="{{ image('gallery/110uteomrade.jpg', 350) }} 350w, {{ image('gallery/110uteomrade.jpg', 600) }} 600w, {{ image('gallery/110uteomrade.jpg', 900) }} 900w, {{ image('gallery/110uteomrade.jpg', 1200) }} 1200w, {{ image('gallery/110uteomrade.jpg', 2000) }} 2000w, {{ image('gallery/110uteomrade.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
+
+        <img
+                alt="Filtvet Fritidseiendom Fasade" class="bgImage hidden"
+                src=""
+                srcset=""
+                data-src="{{ image('gallery/102fasade.jpg', 1200) }}"
+                data-srcset="{{ image('gallery/102fasade.jpg', 350) }} 350w, {{ image('gallery/102fasade.jpg', 600) }} 600w, {{ image('gallery/102fasade.jpg', 900) }} 900w, {{ image('gallery/102fasade.jpg', 1200) }} 1200w, {{ image('gallery/102fasade.jpg', 2000) }} 2000w, {{ image('gallery/102fasade.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
+
+        <img
+                alt="Ekrabukta Filtvet i Asker sommerferie" class="bgImage hidden"
+                src=""
+                srcset=""
+                data-src="{{ image('gallery/priv10.jpg', 1200) }}"
+                data-srcset="{{ image('gallery/priv10.jpg', 350) }} 350w, {{ image('gallery/priv10.jpg', 600) }} 600w, {{ image('gallery/priv10.jpg', 900) }} 900w, {{ image('gallery/priv10.jpg', 1200) }} 1200w, {{ image('gallery/priv10.jpg', 2000) }} 2000w, {{ image('gallery/priv10.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
+
+        <img
+                alt="Filtvet fyr" class="bgImage hidden"
+                src=""
+                srcset=""
+                data-src="{{ image('gallery/priv3.jpg', 1200) }}"
+                data-srcset="{{ image('gallery/priv3.jpg', 350) }} 350w, {{ image('gallery/priv3.jpg', 600) }} 600w, {{ image('gallery/priv3.jpg', 900) }} 900w, {{ image('gallery/priv3.jpg', 1200) }} 1200w, {{ image('gallery/priv3.jpg', 2000) }} 2000w, {{ image('gallery/priv3.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
+
+        <img
+                alt="Filtvet Asker høydefoto" class="bgImage hidden"
+                src=""
+                srcset=""
+                data-src="{{ image('gallery/117hoydefoto.jpg', 1200) }}"
+                data-srcset="{{ image('gallery/117hoydefoto.jpg', 350) }} 350w, {{ image('gallery/117hoydefoto.jpg', 600) }} 600w, {{ image('gallery/117hoydefoto.jpg', 900) }} 900w, {{ image('gallery/117hoydefoto.jpg', 1200) }} 1200w, {{ image('gallery/117hoydefoto.jpg', 2000) }} 2000w, {{ image('gallery/117hoydefoto.jpg', 2500) }} 2500w"
+                sizes="100vw"
+        >
+
+        <video preload="none" src="" data-src="{{ image('ekrabukta.mp4') }}"
+               autoplay="false" muted="false" loop="true"
+               width="100%" height="100%" id="video">
+        </video>
+
     </figure>
+
     <div class="overlay"></div>
     <article class="content">
         <div class="text">
@@ -550,17 +597,23 @@
 {# const observer = lozad(); // lazy loads elements with default selector as '.lozad' #}
 {# observer.observe(); #}
 {# </script--> #}
+{# function* getImage() { #}
+{# for (let image of images) { #}
+{# yield image; #}
+{# } #}
+
 
 <script>
-    {# {{ js('https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js') }} #}
     {{ js('main') }}
 </script>
 <script>
     {{ js('https://cdn.panelbear.com/analytics.js?site=5rV5TKeLxlM') }}
 </script>
 <script>
-    window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
-    panelbear('config', { site: '5rV5TKeLxlM' });
+    window.panelbear = window.panelbear || function () {
+        (window.panelbear.q = window.panelbear.q || []).push(arguments);
+    };
+    panelbear('config', {site: '5rV5TKeLxlM'});
 </script>
 
 </body>

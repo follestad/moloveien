@@ -84,10 +84,31 @@ header {
         z-index: 0;
         background-color: #000;
 
+        video {
+            position: absolute !important;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
         img {
             object-position: center center;
             object-fit: cover;
-            animation: background-scale 10s linear forwards;
+            opacity: 1;
+            z-index: 1;
+            animation: background-scale 8s linear forwards;
+            transition: opacity 600ms ease;
+            color: transparent;
+            display: block;
+        }
+
+        img.hidden {
+            opacity: 0 !important;
         }
 
     }
@@ -124,12 +145,17 @@ header {
     }
 
 
-
     #actions {
         position: absolute;
-        bottom: calc(2em - env(safe-area-inset-bottom));
+        bottom: 2em;
         width: 100%;
         text-align: center;
+    }
+
+    @media ($mobile) {
+        #actions {
+            bottom: 4em;
+        }
     }
 
     @media (min-width: 768px) {
