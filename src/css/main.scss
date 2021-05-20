@@ -9,28 +9,6 @@ $desktop: 'min-width: 900px';
 
 $color-font: #4E5668;
 
-$color-dark1: #2E3440;
-$color-dark2: #3B4252;
-$color-dark3: #434C5E;
-$color-dark4: #4C566A;
-
-$color-light1: #ECEFF4;
-$color-light2: #E5E9F0;
-$color-light3: #D8DEE9;
-$color-light4: #F8F9FB;
-
-$color-red: #BF616A;
-$color-orange: #D08770;
-$color-yellow: #EBCB8B;
-$color-green: #A3BE8C;
-$color-purple: #B48EAD;
-
-$color-blue1: #8FBCBB;
-$color-blue2: #88C0D0;
-$color-blue3: #81A1C1;
-$color-blue4: #5E81AC;
-
-
 %reset {
     width: 100%;
     margin: 0;
@@ -40,12 +18,6 @@ $color-blue4: #5E81AC;
 %padWrap {
     padding: 50px 5%;
 }
-
-/*
-|-------------------------------------------------------------------------------
-| Resets
-|-------------------------------------------------------------------------------
-*/
 
 figure, section, div { @extend %reset; }
 
