@@ -19,3 +19,7 @@ Use ```{{ image('file.jpg') }}``` inside Twig to automatically create an image t
 
 ### ENV-file
 You must create a .env file in the root dir. Use the .env-example file as template.
+
+---
+
+One more thing, this project was just a fun little project, so the documentation is a bit short and incomplete. If you make something cool of this, please let me know.

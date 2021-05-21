@@ -46,6 +46,13 @@ class TwigExtension extends AbstractExtension {
 
 
 
+    /**
+     * Get Config data
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
     #[Pure] public function config(string $key): mixed {
         return $this->config->env( $key );
     }
@@ -66,6 +73,14 @@ class TwigExtension extends AbstractExtension {
 
 
 
+    /**
+     * Resolve file
+     *
+     * @param string $file
+     * @param string $type
+     *
+     * @return string
+     */
     public function resolveFile(string $file, string $type): string {
         if( ! str_starts_with( $file, 'http' ) ) {
             $file = SOURCE_DIR . "$type/" . rtrim( $file, ".$type" ) . ".$type";
@@ -76,6 +91,11 @@ class TwigExtension extends AbstractExtension {
 
 
 
+    /**
+     * Inline CSS
+     *
+     * @param string $file
+     */
     public function css(string $file): void {
         echo "<style>";
         $css = file_get_contents( $this->resolveFile( $file, 'css' ) );
@@ -95,6 +115,8 @@ class TwigExtension extends AbstractExtension {
 
 
     /**
+     * Pass a folder and it will automatically generate all images inside folder
+     *
      * @param string $folder
      *
      * @throws \Exception
