@@ -116,12 +116,14 @@ class TwigExtension extends AbstractExtension {
         $image->extension_original = $image->extension;
 
         # Define expected extension
-        if( in_array( $image->extension_original, [ 'jpg', 'jpeg', 'png' ] ) ) {
+        if( $resize && in_array( $image->extension_original, [ 'jpg', 'jpeg', 'png' ] ) ) {
             $image->extension = 'webp';
         }
 
+        if( $image->dirname === '.' ) $image->dirname = '';
+
         # Define image folder
-        $image->folder = "/asset/image/" . $image->dirname . '/';
+        $image->folder = rtrim("/asset/image/" . $image->dirname, '/') . '/';
 
         # Define path relative to public dir
         $image->path = $image->folder . $image->filename . '.' . $image->extension;

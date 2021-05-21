@@ -32,8 +32,11 @@ async function hideAllImage() {
 
 async function loadVideo() {
     const video = document.getElementById('video');
-    video.setAttribute('src', video.getAttribute('data-src'));
-    return new Promise((r) => setTimeout(r, 2000));
+    if (!video.getAttribute('src')) {
+        video.setAttribute('src', video.getAttribute('data-src'));
+        return new Promise((r) => setTimeout(r, 2000));
+    }
+    return new Promise((r) => setTimeout(r, 0));
 }
 
 function* getImage() {
@@ -89,3 +92,7 @@ function showNextImage() {
 }
 
 showNextImage();
+
+window.onload = () => {
+    setTimeout(loadVideo, 6000);
+}
