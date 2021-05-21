@@ -164,7 +164,16 @@ header {
         }
     }
 
-    @media (min-width: 768px) {
+    @media only screen and (orientation:landscape) and (max-width: 740px) {
+        #actions {
+            bottom: 1em !important;
+        }
+        .content {
+            max-width: 90vw;
+        }
+    }
+
+    @media (min-width: 500px) {
         #actions .buttons {
             display: flex;
             justify-content: center;
@@ -259,7 +268,7 @@ a.finn_no {
         font-size: 13px;
     }
 
-    @media ($desktop) {
+    @media (min-width: 500px) {
         width: 100%;
         margin-left: 1em;
         margin-right: 1em;
