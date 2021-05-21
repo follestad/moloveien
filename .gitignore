@@ -2,3 +2,4 @@
 /code/js/
 /node_modules/
 /vendor/
+.env

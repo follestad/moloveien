@@ -7,7 +7,7 @@ use Core\TwigExtension;
 use Twig\Loader\FilesystemLoader;
 use Whoops\Handler\PrettyPageHandler;
 
-set_time_limit ( 300 );
+set_time_limit( 300 );
 
 /** Define root directory */
 define( 'ROOT_DIR', realpath( __DIR__ . '/../' ) . '/' );
@@ -73,7 +73,7 @@ $template_path = $config->resolveTemplatePath( $path );
  */
 $twigLoader = new FilesystemLoader( SOURCE_DIR );
 $twig = new Environment( $twigLoader, [ 'debug' => true ] );
-$twig->addExtension( new TwigExtension() );
+$twig->addExtension( new TwigExtension( $config ) );
 
 /** Load all json files as data */
 $data = [];
@@ -100,55 +100,37 @@ $template = $twig->render( $template_path, $data );
  * structure as the source folder.
  */
 $static_file = str_replace( '.twig', '.html', PUBLIC_DIR . $template_path );
-$generate_static_file = true;
-
-
-/**
- * Check if we need to regenerate static file
- *
- * This will ONLY look at the main TWIG template file.
- * If changes are made to a included, embedded or extended
- * twig template, it WILL NOT regenerate cache.
- *
- * @todo: Check if we can trigger regenerate static file
- *      based on changes in extended templates.
- *
- */
-if( is_file( $static_file ) && filemtime( SOURCE_DIR . $template_path ) <= filemtime( $static_file ) ) {
-    $generate_static_file = true;
-}
 
 /**
  * Generate static HTML file
  * Turn on output buffering using ob_start.
  * Clean and save the output to a static HTML file
  */
-if( $generate_static_file ) {
 
-    // Create folders if they do not exist
-    $static_folder = pathinfo( $static_file, PATHINFO_DIRNAME );
-    if( ! is_dir( $static_folder ) ) {
-        mkdir( $static_folder, 0777, true );
+// Create folders if they do not exist
+$static_folder = pathinfo( $static_file, PATHINFO_DIRNAME );
+if( ! is_dir( $static_folder ) ) {
+    mkdir( $static_folder, 0777, true );
+}
+
+ob_start( function ($content) use ($config, $static_file) {
+
+    // Remove HTML Comments
+    $content = preg_replace( '/<!--(.*)-->/Uis', '', $content );
+
+    // Remove line breaks
+    $content = preg_replace( '/[\r\n]/', '', $content );
+
+    // Save content
+    if( false !== ( $f = fopen( $static_file, 'w' ) ) ) {
+        fwrite( $f, $content );
+        fclose( $f );
     }
 
-    ob_start( function ($content) use ($config, $static_file) {
+    return $content;
 
-        // Remove HTML Comments
-        $content = preg_replace( '/<!--(.*)-->/Uis', '', $content );
+} );
 
-        // Remove line breaks
-        $content = preg_replace( '/[\r\n]/', '', $content );
-
-        // Save content
-        if( false !== ( $f = fopen( $static_file, 'w' ) ) ) {
-            fwrite( $f, $content );
-            fclose( $f );
-        }
-
-        return $content;
-
-    } );
-}
 
 // Output the template data
 echo $template;

@@ -5,10 +5,21 @@ namespace Core;
 use Exception;
 use Twig\TwigFunction;
 use Gumlet\ImageResize;
+use JetBrains\PhpStorm\Pure;
 use Twig\Extension\AbstractExtension;
 
 class TwigExtension extends AbstractExtension {
 
+
+    /**
+     * TwigExtension constructor.
+     *
+     * @param \Core\Config $config
+     */
+    public function __construct(
+        private Config $config
+    ) {
+    }
 
     /*
     |---------------------------------------------------------------------------
@@ -23,12 +34,20 @@ class TwigExtension extends AbstractExtension {
      */
     public function getFunctions(): array {
         return [
+            new TwigFunction( 'config', [ $this, 'config' ] ),
             new TwigFunction( 'url', [ $this, 'url' ] ),
             new TwigFunction( 'css', [ $this, 'css' ] ),
             new TwigFunction( 'js', [ $this, 'js' ] ),
             new TwigFunction( 'image', [ $this, 'image' ] ),
             new TwigFunction( 'gallery', [ $this, 'gallery' ] ),
         ];
+    }
+
+
+
+
+    #[Pure] public function config(string $key): mixed {
+        return $this->config->env( $key );
     }
 
 
@@ -103,6 +122,7 @@ class TwigExtension extends AbstractExtension {
      *
      * @return string
      * @throws \Gumlet\ImageResizeException
+     * @throws \Exception
      */
     public function image(string $file, int $width = null, bool $resize = true): string {
 
@@ -123,7 +143,7 @@ class TwigExtension extends AbstractExtension {
         if( $image->dirname === '.' ) $image->dirname = '';
 
         # Define image folder
-        $image->folder = rtrim("/asset/image/" . $image->dirname, '/') . '/';
+        $image->folder = rtrim( "/asset/image/" . $image->dirname, '/' ) . '/';
 
         # Define path relative to public dir
         $image->path = $image->folder . $image->filename . '.' . $image->extension;

@@ -7,10 +7,6 @@ use JetBrains\PhpStorm\Pure;
 
 class Config {
 
-    private array $env = [];
-
-
-
 
     /**
      * Validate Required Environments
