@@ -8,11 +8,18 @@ A simple and lightweight tool to generate static HTML sites with PHP and Twig.
 * The core functionality with PHP, Twig, Typescript, PHP Composer and WebPack is only for development, so you can code quickly, ugly and use unoptimized scripts if you like.
 * Has a simple docker file. Just run ````docker compose up -d```` visit http://localhost:8080 and the site will build the static HTML on page load.
 
-### Docker
-Make sure Docker is installed. Go to the project folder in your terminal and type ```docker compose up -d``` to get started. Visit http://localhost:8080 and your site should be running.
+### Composer
+PHP Composer is required. Go the project in terminal and run
+```
+composer update
+```
+This will install all required dependencies. 
 
-### NPM
-Add Javascript to the main.ts file and run ```npm run build``` and an optimized .js file will be created. Add this with a simple ```{{ js('main') }}``` inside your Twig template and it will be automatically inlined.
+### Docker
+Docker is optional, but will make things easier. Go to the project folder in your terminal and type ```docker compose up -d``` to get started. Visit http://localhost:8080 and your site should be running.
+
+### Typescript - Webpack
+The project comes with a predefined setup of Typescript with webpack. Just add your Javascript / Typescript code in the ```src/ts/main.ts``` file and run ```npm run build```. This will create an optimized .js file. Add this with a simple ```{{ js('main') }}``` inside your Twig template, and it will automatically be inlined.
 
 ### Image Optimization
 Use ```{{ image('file.jpg') }}``` inside Twig to automatically create an image that will be optimized and stored in the ```dist``` folder.
